@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.animated-button {
+    /* 初始樣式 */
+    background-color: #007bff; /* 藍色 */
+    color: #ffffff; /* 白色文字 */
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+    /* 過渡效果定義 */
+    /* 指定 background-color 和 color 兩個屬性進行過渡，時長為 0.5 秒，使用 ease-in-out 時間函數 */
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.animated-button:hover {
+    /* 滑鼠移入時的樣式 */
+    background-color: #28a745; /* 綠色 */
+    color: #000000; /* 黑色文字 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* 可選：加強陰影效果 */
+}

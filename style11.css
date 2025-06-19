@@ -1,0 +1,72 @@
+/* 基本 CSS 樣式 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box; /* 確保 padding 不會增加總寬度 */
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #0056b3;
+  margin-bottom: 30px;
+}
+
+/* 容器樣式 */
+.container {
+  display: flex;
+  /* 預設為 column (堆疊)，即 Mobile-First */
+  flex-direction: column;
+  align-items: center; /* 水平居中圖片和文字區塊 */
+  max-width: 960px; /* 限制內容最大寬度，避免在大螢幕上過寬 */
+  margin: 0 auto; /* 容器自身居中 */
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 圖片容器樣式 */
+.image-wrapper {
+  width: 100%; /* 小螢幕下圖片容器佔滿寬度 */
+  margin-bottom: 20px; /* 圖片下方與文字間距 */
+  box-sizing: border-box;
+}
+
+/* 圖片本身樣式 */
+.image-wrapper img {
+  width: 100%; /* 圖片佔滿容器寬度 */
+  height: auto; /* 等比例縮放 */
+  display: block; /* 移除圖片底部的多餘空間 */
+  border-radius: 4px;
+}
+
+/* 文字內容樣式 */
+.text-content {
+  width: 100%; /* 小螢幕下文字內容佔滿寬度 */
+  line-height: 1.6;
+  text-align: justify; /* 文字兩端對齊 */
+  box-sizing: border-box;
+}
+
+/* 媒體查詢：當螢幕寬度大於等於 600px 時 */
+@media (min-width: 600px) {
+  .container {
+    flex-direction: row; /* 改變為左右排列 */
+    align-items: flex-start; /* 頂部對齊 */
+    gap: 30px; /* 圖片和文字之間的間距 */
+  }
+
+  .image-wrapper {
+    flex: 1; /* 圖片容器佔據可用空間的一部分 */
+    max-width: 45%; /* 限制圖片容器最大寬度，避免過大 */
+    margin-bottom: 0; /* 桌面模式下圖片下方不需要間距 */
+  }
+
+  .text-content {
+    flex: 1; /* 文字內容佔據可用空間的另一部分 */
+  }
+}

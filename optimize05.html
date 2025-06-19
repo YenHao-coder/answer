@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>考題 5：程式效能優化 -解答-</title>
+    <link rel="stylesheet" href="style05.css">
+</head>
+<body>
+    <h1>DOM 操作效能比較</h1>
+    <p>點擊按鈕，觀察在控制台和頁面渲染上的時間差異。</p>
+    <p>每次測試將創建 1000 個 div 元素。</p>
+
+    <div class="button-group">
+        <button id="run-original" class="original-btn">執行原始方法 (低效)</button>
+        <button id="run-optimized" class="optimized-btn">執行優化方法 (高效)</button>
+        <button id="clear-results" class="clear-btn">清除結果</button>
+    </div>
+
+    <div class="section">
+        <h2>原方法</h2>
+        <div id="original-result" class="result-container"></div>
+    </div>
+
+    <div class="section">
+        <h2>字串陣列 + 一次DOM方法</h2>
+        <div id="optimized-result" class="result-container"></div>
+    </div>
+
+    <script src="script05.js"></script>
+
+</body>
+</html>

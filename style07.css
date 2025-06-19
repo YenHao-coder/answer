@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  flex-direction: column; /* 將內容垂直堆疊 */
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box; /* 確保 padding 不會增加總寬度 */
+}
+.title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: skyblue;
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+}
+#displayTime{
+    color:#f0f0f0
+}

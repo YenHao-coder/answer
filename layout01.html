@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>考題 1：前端布局 -解答-</title>
+    <link rel="stylesheet" href="style01.css" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column; /* 將內容垂直堆疊 */
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        box-sizing: border-box; /* 確保 padding 不會增加總寬度 */
+      }
+      .product-card {
+        border-radius: 8px;
+        background-color: #fff;
+        width: 300px;
+        box-shadow: 0 5px 10px;     
+      }
+      .product-card-img {
+        width: 100%;
+        border-radius: 5px;
+      }
+      .product-card-name {
+        margin: 0;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-bottom: 10px;
+        font-size: 1.0em;
+      }
+
+      .product-card-price {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: red;
+        margin-bottom: 15px;
+      }
+      .product-card-button {
+        border-radius: 5px;
+        border: 0.5px solid chocolate;
+        background-color: transparent;
+        color: chocolate;         
+        font-size: 0.8em;
+        width: 78%;
+      }
+      .product-card-button:hover {
+        background-color: chocolate;
+        color: #fff;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="product-grid-container">
+      <div class="product-card">
+        <img
+          src="image/20240311180402824.jpg"
+          alt=""
+          class="product-card-img"
+        />
+        <div class="product-card-name">【特賣】1.5Kg 精選咖啡豆 中度烘培</div>
+        <div class="product-card-price">
+          399元<button class="product-card-button">立刻下單</button>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>

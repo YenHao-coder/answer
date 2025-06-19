@@ -1,0 +1,127 @@
+body {
+    display: flex;
+    flex-direction: column; /* 將內容垂直堆疊 */
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-sizing: border-box; /* 確保 padding 不會增加總寬度 */
+}
+.cart-summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+}
+.product-card {
+    width: 300px; /* 固定卡片寬度 */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* 確保圖片圓角 */
+    display: flex;
+    flex-direction: column; /* 圖片和內容垂直堆疊 */
+    margin-bottom: 20px;
+}
+
+.product-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 裁剪圖片以填充容器 */
+    
+}
+.product-card-details {
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* 名稱、價格、數量控制、按鈕垂直堆疊 */
+    flex-grow: 1; /* 讓內容區填充剩餘空間 */
+}
+.product-card-name {
+    text-align: center; /* 商品名稱置中 */
+    font-size: 1.3em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.product-card-price {
+    text-align: left; /* 價格靠左 */
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.product-card-price span {
+    font-size: 0.9em;
+    vertical-align: super;
+}
+.quantity-control {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* 與下方按鈕的間距 */
+    /* 讓數量控制區和購買按鈕水平排列 */
+    /* 因為原題目要求價格靠左，購買按鈕靠右，這部分衝突。
+       我將數量控制和購買按鈕視為底部一個整體功能區塊，
+       並讓數量控制區和按鈕本身在該區塊內左右排列。
+       如果「購買按鈕在價格旁邊靠右」是絕對要求，
+       則需要調整 .product-card__details 為 Grid 佈局或更複雜的 Flex 嵌套。
+       目前設計為：價格左對齊，下方是數量控制區塊和購買按鈕的組合。
+    */
+}
+
+.quantity-btn {
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+    flex-shrink: 0; /* 不縮小 */
+    transition: background-color 0.2s;
+}
+
+.quantity-btn:hover {
+    background-color: #d0d0d0;
+}
+
+.quantity-input {
+    width: 60px; /* 固定輸入框寬度 */
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 5px; /* 左右間距 */
+    font-size: 1em;
+    
+}
+/* 移除 Chrome/Safari 上的 spinner */
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.product-card__button.add-to-cart-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: auto; /* 讓按鈕寬度根據內容自適應 */
+    align-self: flex-end; /* 將購買按鈕推到右邊 */
+    margin-top: auto; /* 將按鈕推到底部，利用 flex-grow:1 在 .product-card__details */
+    transition: background-color 0.3s ease;
+}
+
+.product-card__button.add-to-cart-btn:hover {
+    background-color: #0056b3;
+}
